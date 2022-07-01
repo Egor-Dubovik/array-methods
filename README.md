@@ -1,0 +1,1 @@
+Everything about array methods (theory, polyfill, tasks + solution)
