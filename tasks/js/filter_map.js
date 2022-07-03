@@ -9,40 +9,7 @@
 // у которых рейтинг равен "5.0" и вернёт их (пременную videos можно не создавать).
 // В новом массиве оставьте только 2 поля: id, title 
 //-----------------------------------------------------------------------------------
-let newReleases = [
-  {
-    id: 70111470,
-    title: "Die Hard",
-    boxart: "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
-    uri: "http://api.netflix.com/catalog/titles/movies/70111470",
-    rating: 4.0,
-    bookmark: [],
-  },
-  {
-    id: 654356453,
-    title: "Bad Boys",
-    boxart: "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
-    uri: "http://api.netflix.com/catalog/titles/movies/70111470",
-    rating: 5.0,
-    bookmark: [{ id: 432534, time: 65876586 }],
-  },
-  {
-    id: 65432445,
-    title: "The Chamber",
-    boxart: "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
-    uri: "http://api.netflix.com/catalog/titles/movies/70111470",
-    rating: 4.0,
-    bookmark: [],
-  },
-  {
-    id: 675465,
-    title: "Fracture",
-    boxart: "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
-    uri: "http://api.netflix.com/catalog/titles/movies/70111470",
-    rating: 5.0,
-    bookmark: [{ id: 432534, time: 65876586 }],
-  },
-];
+import { newReleases } from "./newReleases.js";
 
 //* First solution - O(n^2)
 /* const ratingFiltering = (releases) => {
@@ -58,12 +25,12 @@ let newReleases = [
 
 
 //* Second solution - O(n)
-/* const ratingFiltering = (releases) => {
+const ratingFiltering = (releases) => {
   return releases
     .filter(video => video.rating == 5.0)
-    .map(video => { id, title });
-}; */
+    .map(({ id, title }) => ({ id, title }));
+};
 
 
-// const videos = ratingFiltering(newReleases);
-// console.log(videos);
+const videos = ratingFiltering(newReleases);
+console.log(videos);
