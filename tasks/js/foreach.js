@@ -35,27 +35,39 @@ import { movieLists, boxarts } from "./database.js";
 
 // Ограничения: выполните задание используя forEach
 // Задание: достать объект с самой большой площадью картинки
+// width: 425, height: 150,
 
-const showoLargestObject = (boxarts) => {
-  let arr = [];
+//* First solution O(n)
+// const showoLargestObject = (boxarts) => {
+//   let arr = [];
 
-  boxarts.forEach(el => {
-    if (arr.length === 0) {
-      arr.push(el);
-    } else {
-      const currentSquare = el.width * el.height;
-      const biggestSquare = arr[0].width * arr[0].height;
+//   boxarts.forEach(el => {
+//     if (arr.length === 0) {
+//       arr.push(el);
+//     } else {
+//       const currentSquare = el.width * el.height;
+//       const biggestSquare = arr[0].width * arr[0].height;
 
-      if (currentSquare > biggestSquare) {
-        arr.length = 0;
-        arr.push(el);
-      }
-    }
-  });
-
-
-  return arr[0];
-}
+//       if (currentSquare > biggestSquare) {
+//         arr.length = 0;
+//         arr.push(el);
+//       }
+//     }
+//   });
 
 
-console.log(showoLargestObject(boxarts));
+//   return arr[0];
+// }
+
+//* Second solution O(n)
+// const showoLargestObject = (boxarts) => {
+//   return [...boxarts].sort((a, b) => {
+//     const firstSquare = a.width * a.height;
+//     const secondSquare = b.width * b.height;
+
+//     return secondSquare - firstSquare;
+//   })[0];
+// };
+
+
+// console.log(showoLargestObject(boxarts));
