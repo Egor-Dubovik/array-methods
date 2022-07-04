@@ -1,1 +1,1 @@
-Everything about array methods (theory, polyfill, tasks + solution)
+Task link: https://docs.google.com/document/d/1BbmPIBzW9fjyG4uooNwN6XegptQX6vP1cg77hozsWog/edit
